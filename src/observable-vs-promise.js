@@ -1,5 +1,6 @@
 const { Observable, map } = require('rxjs');
 
+// promise (eager)
 console.log('before declaring promise')
 var promise = new Promise(function (resolve, reject) {
     console.log('* hello from the promise land');
@@ -9,7 +10,7 @@ console.log('after declaring promise');
 promise.then((value) => {console.log('****** promise value: ', value);})
 console.log('****** end promise demo \n')
 
-// observables
+// observables (lazy)
 console.log('before declaring observable');
 var observable = new Observable( (observer) => {
     console.log('* hello from inside observable')
@@ -20,7 +21,7 @@ var observable = new Observable( (observer) => {
       observer.next(4);
       observer.complete();
     }, 1000);
-  })//.pipe( map((value) => value * 3));
+  }).pipe( map((value) => value * 3));
   
   console.log('just before subscribe');
 
