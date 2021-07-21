@@ -38,7 +38,7 @@ replaySubject.subscribe((value) => console.log('C:', value));// gets 3, 4, 5
 
 console.log('\n');
 console.log('****************************** asyncSubject - receive last value on complete')
-const asyncSubject = new AsyncSubject(); // buffer size 3
+const asyncSubject = new AsyncSubject(); 
 
 asyncSubject.next(1);
 asyncSubject.subscribe((value) => console.log('A: ', value));// gets nothing

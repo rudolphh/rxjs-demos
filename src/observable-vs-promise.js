@@ -1,4 +1,4 @@
-const { Observable, map } = require('rxjs');
+const { Observable, map, filter, switchMap, of } = require('rxjs');
 
 // promise (eager)
 console.log('before declaring promise')
@@ -20,14 +20,15 @@ var observable = new Observable( (observer) => {
     setTimeout(() => {
       observer.next(4);
       observer.complete();
+      //observer.next(5);
     }, 1000);
   }).pipe( map((value) => value * 3));
   
   console.log('just before subscribe');
 
-  //observable.subscribe(x => console.log('got value ' + x));‹
+  // observable.subscribe(x => console.log('got value ' + x));
   observable.subscribe({
-    next: x => console.log('* got value ' + x),
+    next: x => console.log('* A got value ' + 3* x),
     error: err => console.error('something wrong occurred: ' + err),
     complete: () => console.log('done'),
   });
