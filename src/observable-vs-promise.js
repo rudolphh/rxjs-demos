@@ -19,10 +19,10 @@ var observable = new Observable( (observer) => {
     observer.next(3);
     setTimeout(() => { // make it wait
       observer.next(4);
-      observer.complete();
-      //observer.next(5);
+      observer.complete();// done observing (no more data can be sent)
+      observer.next(5);// will not be observed
     }, 1000);
-  }).pipe( map((value) => value * 3));
+  }).pipe( map((value) => value * 3));// every source value will be mapped to a new value (sourceVal * 3)
   
   console.log('just before subscribe');
 
