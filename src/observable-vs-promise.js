@@ -17,7 +17,7 @@ var observable = new Observable( (observer) => {
     observer.next(1);
     observer.next(2);
     observer.next(3);
-    setTimeout(() => {
+    setTimeout(() => { // make it wait
       observer.next(4);
       observer.complete();
       //observer.next(5);
