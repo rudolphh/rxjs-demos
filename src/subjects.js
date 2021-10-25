@@ -7,7 +7,7 @@ subject.next(1);// called from somewhere else in the application
 
 // no one was subscribed so the value 1 is lost
 subject.subscribe((value) => console.log('A: ', value));// somewhere in the application listening for a change
-subject.next(2);
+subject.next(2);// send value 2 down the 'pipeline'
 subject.subscribe((value) => console.log('B: ', value));
 subject.next(3);
 
