@@ -26,7 +26,7 @@ console.log('\n');
 console.log('****************************** replaySubject - n buffer values')
 const replaySubject = new ReplaySubject(3); // buffer size 3
 
-replaySubject.next(1);
+replaySubject.next(1);// ahh ccc push it
 replaySubject.next(2);
 replaySubject.next(3);
 replaySubject.subscribe((value) => console.log('A:', value));// gets 1, 2, 3
