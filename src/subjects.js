@@ -17,10 +17,10 @@ console.log('******************************** behaviorSubject - single buffer va
 const behaviorSubject = new BehaviorSubject(1);
 
 behaviorSubject.subscribe((value) => console.log('A: ', value));// somewhere in the application listening for a change
-behaviorSubject.next(2);
-behaviorSubject.subscribe((value) => console.log('B: ', value));
-behaviorSubject.next(3);
-behaviorSubject.subscribe((value) => console.log('C: ', value));
+behaviorSubject.next(2);// send 2 to all subscribers
+behaviorSubject.subscribe((value) => console.log('B: ', value));// subscribe and get last value (2)
+behaviorSubject.next(3);// send 3 to all subscribers
+behaviorSubject.subscribe((value) => console.log('C: ', value));// subscribe and get last value (3)
 
 console.log('\n');
 console.log('****************************** replaySubject - n buffer values')
